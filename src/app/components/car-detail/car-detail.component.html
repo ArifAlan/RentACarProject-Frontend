@@ -1,0 +1,36 @@
+<app-car-image></app-car-image>
+<div>
+  <div class=>
+    <div class=>
+      
+      <table class="table table-dark table-borderless table-striped">
+        <thead>
+          <tr>
+            <th>ModelName</th>
+            <th>BrandName</th>
+            <th>ColorName</th>
+            <th>Description</th>
+            <th>DailyPrice </th>
+            <th>ModelYear</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let carDetail of carDetails">
+            <td>{{ carDetail.modelName }}</td>
+            <td>{{ carDetail.brandName }}</td>
+            <td>{{ carDetail.colorName }}</td>
+            <td>{{ carDetail.description }}</td>
+            <td>{{ carDetail.dailyPrice }}</td>
+            <td>{{carDetail.modelYear}}</td>
+            <td><button (click)="addToCart(carDetail)" 
+              type="button" class="btn btn-success">Kirala</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,19 @@
+<ul class="list-group">
+  <div class="mb-3">
+    <label for="filterText" class="form-label">Brand Search</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Arama  ifadesi giriniz">
+  </div>
+  <div *ngIf="filterText" class="alert alert-success">
+    {{filterText}} aradınız
+  </div>
+  <li [class]="getAllBrandClass()" routerLink="/cars">Tüm Markalar</li>
+  <li
+    (click)="setCurrentBrand(brand)"
+    routerLink="/cars/brands/{{brand.brandId}}"
+    *ngFor="let brand of brands " 
+    [class]="getCurrentBrandClass(brand) "
+  >
+    {{ brand.brandName }}
+  </li>
+</ul>
+<h5 *ngIf="currentBrand">{{ currentBrand.brandName }} seçtiniz</h5>
